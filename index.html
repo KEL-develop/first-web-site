@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+    <style>
+      /*  head
+        {
+            text-align: center;
+            vertical-align: center;
+            margin: 10px;
+        }
+*/
+        video
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            .logo
+            {
+                position: absolute;
+            }
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn
+        {
+            font-size: 25px;
+            padding: 15px 30px;
+            border: 5px solid white;
+            background-color: black;
+            color: black;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: absolute;
+            transition: all 0.4s;
+            overflow: hidden;
+        }
+
+        .btn:focus
+        {
+            outline: none;
+        }
+        .btn::before{
+            content: "";
+            position: absolute;
+            height: 100%;
+            font-weight: 100%;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            transition: all 0.4s;
+            z-index: -1;
+        }
+
+        .btn:hover::before{
+            transform: translateY(-100%);
+
+        }
+
+        .btn:hover{
+            color: white;
+        }
+
+        .text_box{
+            height: 250px;
+            font-size: 2rem;
+            text-align: top;
+            align-items: top;
+            justify-content: top;
+            vertical-align: center;
+            font-weight: bold;
+            }
+
+    </style>
+    <meta charset="utf-8">
+    <head>
+        
+    </head>
+
+    <body>
+        
+        <div>
+            <video class = "video" muted autoplay loop width="1200">
+                <source src="intro.mp4" type="video/mp4"
+            </video>
+            <div class="logo">
+               
+            </div>
+        </div>
+        <div class="text_box">
+            <span class="text"></span>
+          </div>
+          <button id="startButton" class="btn">Start</button>
+        <script>
+            
+            const content = "British Rock Band \n Oasis Introduce"
+            const text = document.querySelector(".text");
+            let i = 0;
+
+            function typing()
+            {
+                let txt = content[i++];
+                text.innerHTML += txt == "\n" ? "<br/>": txt;
+                if (i > content.length) 
+                {
+                    text.textContent = "";
+                    i = 0;
+                }
+            }
+        setInterval(typing, 200)
+
+        var startButton = document.getElementById("startButton");
+
+
+            startButton.addEventListener("click", function() {
+            window.location.href = "main.html";
+            });
+        </script>
+
+       
+    </body>
+</html>
