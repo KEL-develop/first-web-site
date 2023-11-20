@@ -1,0 +1,113 @@
+body
+{
+    margin: 0;
+}
+.size
+{
+    width: 100px;
+    padding-top: 10px;
+}
+h1
+{
+    display: inline;
+    margin: 10px;
+        padding: 0px;
+}
+.head
+{
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    margin: 0;
+    z-index: 1;
+}
+h2
+{
+    padding: 0;
+    margin: 0;
+}
+
+#gridul{
+        border-right: 1px solid gray;
+        width:  200px;
+        margin: 10px;
+        padding: 0px;
+}
+li{
+    padding: 10px;
+}
+#grid
+{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    border-bottom: 1px solid gray;
+}
+#text
+{
+    margin: 10px;
+}
+
+@media(max-width:500px)
+{
+    #grid ul
+    {
+        text-align: center;
+        border-right: none;
+        padding: 10px;
+        margin: 0;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #grid
+    {
+        display: block;
+    }
+}
+
+.dropdown{
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin: 10px;
+}
+.option{
+    display: none;
+    position: absolute;
+    overflow: auto;
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    z-index: 2;
+}
+.dropdown:hover .option
+{
+    display: block;
+}
+.dropdownbtn
+{
+    border: none;
+    border-radius:5px;
+    padding:15px 30px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.dropdownbtn:hover{
+    background-color: #ddd;
+}
+#liam
+{
+    padding-right: 40px;
+}
+.option a {
+display: block;
+color: #000000;
+padding: 5px;
+text-decoration: none;
+padding:20px 40px;
+}
+
+.option a:hover {
+color: #0a0a23;
+background-color: #ddd;
+border-radius:5px;
+}

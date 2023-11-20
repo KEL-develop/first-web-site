@@ -1,0 +1,531 @@
+<title> Oasis's story </title>
+<html>
+<head>
+    <style>
+        
+        body
+        {
+            margin: 0;
+        }
+        .size
+        {
+            width: 100px;
+            padding-top: 10px;
+        }
+        h1
+        {
+            display: inline;
+            margin: 10px;
+                padding: 0px;
+        }
+        .head
+        {
+            border-bottom: 1px solid gray;
+            padding: 10px;
+            margin: 0;
+            z-index: 1;
+        }
+        h2
+        {
+            padding: 0;
+            margin: 0;
+        }
+
+        #gridul{
+                border-right: 1px solid gray;
+                width:  200px;
+                margin: 10px;
+                padding: 0px;
+        }
+        li{
+            padding: 10px;
+        }
+        #grid
+        {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            border-bottom: 1px solid gray;
+        }
+        #text
+        {
+            margin: 10px;
+            margin-bottom: 40px;
+            font-size: 20px;
+
+        }
+        
+        @media(max-width:800px)
+        {
+            #gridul
+            {
+                text-align: center;
+                border-right: none;
+                padding: 10px;
+                margin: 0;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #grid
+            {
+                display: block;
+            }
+            .dropdown, .dropdownbtn{
+                display: none;
+            }
+            .slidebox
+            {
+                display: none;
+            }
+        }
+        .dropdown{
+            display: inline-block;
+            position: relative;
+            float: right;
+            margin: 10px;
+        }
+        .option{
+            display: none;
+            position: absolute;
+            overflow: auto;
+            background-color:#fff;
+            border-radius:5px;
+            box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+            z-index: 2;
+        }
+        .dropdown:hover .option
+        {
+            display: block;
+        }
+        .dropdownbtn
+        {
+            border: none;
+            border-radius:5px;
+            padding:15px 30px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        .dropdownbtn:hover{
+            background-color: #ddd;
+        }
+        #liam
+        {
+            padding-right: 40px;
+        }
+        .option a {
+        display: block;
+        color: #000000;
+        padding: 5px;
+        text-decoration: none;
+        padding:20px 40px;
+        }
+
+        .option a:hover {
+        color: #0a0a23;
+        background-color: #ddd;
+        border-radius:5px;
+        }
+
+
+        [name="slide"] {display: none;}
+        .slidebox{max-width: 1000px; width: 100%; margin: 0 auto;}
+        .slidebox img{max-width: 100%; width: 100%;}
+        .slidebox .slidelist
+        {
+            white-space: nowrap;
+            font-size: 0;
+            overflow: hidden;
+            border: 5px solid gray;
+        }
+        .slidebox .slideitem{
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            transition: all .35s;
+        }
+        .slidebox .slideitem label{
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        label.left{
+            left: 20px;
+            background-position: center center;
+            background-size: 50%;
+            background-repeat: no-repeat;
+        }
+        label.right{
+            right: 20px;
+            background-position: center center;
+            background-size: 50%;
+            background-repeat: no-repeat;
+        }
+        
+        [id=slide01]:checked ~ .slidelist .slideitem {transform: translateX(0); animation: slide01 20s infinite;}
+        [id=slide02]:checked ~ .slidelist .slideitem {transform: translateX(-100); animation: slide02 20s infinite;}
+        [id=slide03]:checked ~ .slidelist .slideitem {transform: translateX(-200%); animation: slide03 20s infinite;}
+        [id=slide04]:checked ~ .slidelist .slideitem {transform: translateX(-300%); animation: slide04 20s infinite;}
+        [id=slide05]:checked ~ .slidelist .slideitem {transform: translateX(-480%); animation: slide05 20s infinite;}
+        [id=slide06]:checked ~ .slidelist .slideitem {transform: translateX(-500%); animation: slide06 20s infinite;}
+        [id=slide07]:checked ~ .slidelist .slideitem {transform: translateX(-600%); animation: slide07 20s infinite;}
+        [id=slide08]:checked ~ .slidelist .slideitem {transform: translateX(-700%); animation: slide08 20s infinite;}
+        [id=slide09]:checked ~ .slidelist .slideitem {transform: translateX(-800%); animation: slide09 20s infinite;}
+
+        
+        @keyframes slide01
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -106%}
+            20% {left: -106%}
+            22% {left: -207%}
+            31% {left: -207%}
+            33% {left: -309%}
+            42% {left: -309%}
+            44% {left: -412%}
+            53% {left: -412%}
+            55% {left: -513.8%}
+            64% {left: -513.8%}
+            66% {left: -616%}
+            75% {left: -616%}
+            77% {left: -718%}
+            86% {left: -718%}
+            88% {left: -820%}
+            97% {left: -820%}
+            100% {left: 0%}
+        }
+        @keyframes slide02
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -100%}
+            20% {left: -100%}
+            22% {left: -200%}
+            31% {left: -200%}
+            33% {left: -300%}
+            42% {left: -300%}
+            44% {left: -400%}
+            53% {left: -400%}
+            55% {left: -500%}
+            64% {left: -500%}
+            66% {left: -600%}
+            75% {left: -600%}
+            77% {left: -700%}
+            86% {left: -700%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+        @keyframes slide03
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -100%}
+            20% {left: -100%}
+            22% {left: -200%}
+            31% {left: -200%}
+            33% {left: -300%}
+            42% {left: -300%}
+            44% {left: -400%}
+            53% {left: -400%}
+            55% {left: -500%}
+            64% {left: -500%}
+            66% {left: -600%}
+            75% {left: -600%}
+            77% {left: 200%}
+            86% {left: 200%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+        @keyframes slide04
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -100%}
+            20% {left: -100%}
+            22% {left: -200%}
+            31% {left: -200%}
+            33% {left: -300%}
+            42% {left: -300%}
+            44% {left: -400%}
+            53% {left: -400%}
+            55% {left: -500%}
+            64% {left: -500%}
+            66% {left: 300%}
+            75% {left: 300%}
+            77% {left: 200%}
+            86% {left: 200%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+        @keyframes slide05
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -100%}
+            20% {left: -100%}
+            22% {left: -200%}
+            31% {left: -200%}
+            33% {left: -300%}
+            42% {left: -300%}
+            44% {left: -400%}
+            53% {left: -400%}
+            55% {left: 400%}
+            64% {left: 400%}
+            66% {left: 300%}
+            75% {left: 300%}
+            77% {left: 200%}
+            86% {left: 200%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+        @keyframes slide06
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -100%}
+            20% {left: -100%}
+            22% {left: -200%}
+            31% {left: -200%}
+            33% {left: -300%}
+            42% {left: -300%}
+            44% {left: 500%}
+            53% {left: 500%}
+            55% {left: 400%}
+            64% {left: 400%}
+            66% {left: 300%}
+            75% {left: 300%}
+            77% {left: 200%}
+            86% {left: 200%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+        @keyframes slide07
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -100%}
+            20% {left: -100%}
+            22% {left: -200%}
+            31% {left: -200%}
+            33% {left: 600%}
+            42% {left: 600%}
+            44% {left: 500%}
+            53% {left: 500%}
+            55% {left: 400%}
+            64% {left: 400%}
+            66% {left: 300%}
+            75% {left: 300%}
+            77% {left: 200%}
+            86% {left: 200%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+        @keyframes slide08
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: -100%}
+            20% {left: -100%}
+            22% {left: 700%}
+            31% {left: 700%}
+            33% {left: 600%}
+            42% {left: 600%}
+            44% {left: 500%}
+            53% {left: 500%}
+            55% {left: 400%}
+            64% {left: 400%}
+            66% {left: 300%}
+            75% {left: 300%}
+            77% {left: 200%}
+            86% {left: 200%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+        @keyframes slide09
+        {
+            0% {left: 0%}
+            9% {left: 0%}
+            11% {left: 800%}
+            20% {left: 800%}
+            22% {left: 700%}
+            31% {left: 700%}
+            33% {left: 600%}
+            42% {left: 600%}
+            44% {left: 500%}
+            53% {left: 500%}
+            55% {left: 400%}
+            64% {left: 400%}
+            66% {left: 300%}
+            75% {left: 300%}
+            77% {left: 200%}
+            86% {left: 200%}
+            88% {left: 100%}
+            97% {left: 100%}
+            100% {left: 0%}
+        }
+    </style>
+    <div class="head">
+            <h1>What's the <a href = "index.html"><img src="oasislogo.jpg" width="80%" class="size"></a>?</h1>
+                                        
+
+            <div class="dropdown" id="liam">
+                <button class="dropdownbtn">Liam Gallagher</button>
+                <div class="option">
+                    <a href="L1.html">Liam</a>
+                    <a href="L2.html">Album List</a>
+                    <a href="L3.html">Recommendation</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropdownbtn">Noel Gallagher</button>
+                <div class="option">
+                    <a href="N1.html">Noel</a>
+                    <a href="N2.html">Album List</a>
+                    <a href="N3.html">Recommendation</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdownbtn">Oasis</button>
+                <div class="option">
+                    <a href="1.html">1rd Album</a>
+                    <a href="2.html">2rd Album</a>
+                    <a href="3.html">3rd Album</a>
+                    <a href="4.html">4rd Album</a>
+                    <a href="5.html">5rd Album</a>
+                    <a href="6.html">6rd Album</a>
+                    <a href="7.html">7rd Album</a>
+                    <a href="TheMasterplan.html">etc</a>
+                    <a href="Recommendation.html">Recommendation</a>
+                </div>
+            </div>
+        
+        </div>
+</head>
+<body>
+    <div id="grid">
+            <ul id="gridul">    
+                <h2>Oasis Album List</h2>
+                    
+                        <li><a href="1.html"> 1. Definitely Maybe</a></li>
+                        <li><a href="2.html">2. (What's the story) Morning Glory</a></li>
+                        <li><a href="3.html">3. Be Here Now</a></li>
+                        <li><a href="4.html">4. Standing On The Shoulder of Giants</a></li>
+                        <li><a href="5.html">5. Heathen Chemistry</a></li>
+                        <li><a href="6.html">6. Don't Believe The Truth</a></li>
+                        <li><a href="7.html">7. Dig Out Your Soul</a></li>
+                        <li><a href="TheMasterplan.html">The Masterplan</a></li>
+                    
+            </ul>
+
+
+
+        <div id="text">
+            Oasis was a British rock band that played a significant role in the Britpop music movement of the 1990s. The band was formed in Manchester in 1991, and its original lineup included Noel Gallagher (lead guitar, vocals), Liam Gallagher (vocals), Paul "Bonehead" Arthurs (rhythm guitar), Paul "Guigsy" McGuigan (bass), and Tony McCarroll (drums).
+
+            Oasis gained widespread recognition with their debut album, "Definitely Maybe," which was released in 1994. The album quickly became the fastest-selling debut album in the UK at that time, setting the stage for their rise to fame. The band's sound was characterized by catchy melodies, anthemic choruses, and Noel Gallagher's distinctive songwriting.
+            
+            "(What's the Story) Morning Glory?" followed in 1995 and catapulted Oasis to international stardom. The album featured hits like "Wonderwall" and "Don't Look Back in Anger," which became iconic songs of the '90s. The success of this album solidified Oasis as one of the biggest bands of the era.
+            
+            Throughout their career, the Gallagher brothers, Noel and Liam, were known for their intense sibling rivalry and public disputes, both on and off the stage. The conflicts eventually took a toll on the band's stability. In 2009, after years of internal strife, Noel Gallagher left the band, leading to Oasis's disbandment.
+            
+            Post-Oasis, both Noel and Liam pursued solo careers. Noel formed Noel Gallagher's High Flying Birds, while Liam founded Beady Eye before later embarking on a solo career. The brothers continued to make headlines with their individual projects, and speculation about an Oasis reunion persisted over the years, though nothing had materialized up until my knowledge cutoff in January 2022.
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <div class="slidebox">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <input type="radio" name="slide" id="slide04">
+                <input type="radio" name="slide" id="slide05">
+                <input type="radio" name="slide" id="slide06">
+                <input type="radio" name="slide" id="slide07">
+                <input type="radio" name="slide" id="slide08">
+                <input type="radio" name="slide" id="slide09">
+                <ul class="slidelist">
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide09" class="left"></label>
+                            <label for="slide02" class="right"></label>
+                            <a href="1.html"><img src="oasis1.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide01" class="left"></label>
+                            <label for="slide03" class="right"></label>
+                            <a href="2.html"><img src="oasis2.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide02" class="left"></label>
+                            <label for="slide04" class="right"></label>
+                            <a href="3.html"><img src="oasis3.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide03" class="left"></label>
+                            <label for="slide05" class="right"></label>
+                            <a href="4.html"><img src="oasis4.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide04" class="left"></label>
+                            <label for="slide06" class="right"></label>
+                            <a href="5.html"><img src="oasis5.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide05" class="left"></label>
+                            <label for="slide07" class="right"></label>
+                            <a href="6.html"><img src="oasis6.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide06" class="left"></label>
+                            <label for="slide08" class="right"></label>
+                            <a href="7.html"><img src="oasis7.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide07" class="left"></label>
+                            <label for="slide09" class="right"></label>
+                            <a href="8.html"><img src="oasis8.jpg"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide08" class="left"></label>
+                            <label for="slide01" class="right"></label>
+                            <a href="9.html"><img src="oasis9.jpg"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
